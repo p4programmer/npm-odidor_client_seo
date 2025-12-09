@@ -36,7 +36,7 @@ pnpm add react-client-seo
 ### Component API
 
 ```tsx
-import { Seo } from 'react-client-seo';
+import { Seo } from "react-client-seo";
 
 function App() {
   return (
@@ -44,7 +44,7 @@ function App() {
       <Seo
         title="My Page Title"
         description="This is a great page about React SEO"
-        keywords={['react', 'seo', 'meta tags']}
+        keywords={["react", "seo", "meta tags"]}
         canonical="https://example.com/page"
       />
       <div>Your content here</div>
@@ -56,17 +56,17 @@ function App() {
 ### Hook API
 
 ```tsx
-import { useSeo } from 'react-client-seo';
-import { useEffect } from 'react';
+import { useSeo } from "react-client-seo";
+import { useEffect } from "react";
 
 function MyComponent() {
   const { updateSeo } = useSeo();
 
   useEffect(() => {
     updateSeo({
-      title: 'My Page Title',
-      description: 'Page description',
-      keywords: 'react, seo',
+      title: "My Page Title",
+      description: "Page description",
+      keywords: "react, seo",
     });
   }, []);
 
@@ -123,14 +123,14 @@ function MyComponent() {
   jsonLd={{
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Amazing Product",
-    "description": "This is an amazing product",
-    "image": "https://example.com/product.jpg",
-    "offers": {
+    name: "Amazing Product",
+    description: "This is an amazing product",
+    image: "https://example.com/product.jpg",
+    offers: {
       "@type": "Offer",
-      "price": "99.99",
-      "priceCurrency": "USD"
-    }
+      price: "99.99",
+      priceCurrency: "USD",
+    },
   }}
 />
 ```
@@ -169,7 +169,7 @@ function MyComponent() {
 ### Complete Example
 
 ```tsx
-import { Seo } from 'react-client-seo';
+import { Seo } from "react-client-seo";
 
 function ProductPage({ product }) {
   return (
@@ -189,19 +189,17 @@ function ProductPage({ product }) {
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Product",
-          "name": product.name,
-          "description": product.description,
-          "image": product.image,
-          "offers": {
+          name: product.name,
+          description: product.description,
+          image: product.image,
+          offers: {
             "@type": "Offer",
-            "price": product.price,
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-          }
+            price: product.price,
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+          },
         }}
-        customMeta={[
-          { name: "robots", content: "index, follow" },
-        ]}
+        customMeta={[{ name: "robots", content: "index, follow" }]}
       />
       <div>
         <h1>{product.name}</h1>
@@ -216,30 +214,30 @@ function ProductPage({ product }) {
 
 ### `<Seo />` Component Props
 
-| Prop | Type | Description |
-|------|------|-------------|
-| `title` | `string` | Page title |
-| `description` | `string` | Meta description |
-| `keywords` | `string \| string[]` | Meta keywords (comma-separated string or array) |
-| `canonical` | `string` | Canonical URL |
-| `ogImage` | `string` | Open Graph image URL |
-| `ogType` | `string` | Open Graph type (e.g., "article", "website") |
-| `ogUrl` | `string` | Open Graph URL |
-| `ogTitle` | `string` | Open Graph title (defaults to `title`) |
-| `ogDescription` | `string` | Open Graph description (defaults to `description`) |
-| `ogSiteName` | `string` | Open Graph site name |
-| `ogLocale` | `string` | Open Graph locale |
-| `twitterCard` | `'summary' \| 'summary_large_image' \| 'app' \| 'player'` | Twitter Card type |
-| `twitterSite` | `string` | Twitter site handle |
-| `twitterCreator` | `string` | Twitter creator handle |
-| `twitterTitle` | `string` | Twitter title (defaults to `title`) |
-| `twitterDescription` | `string` | Twitter description (defaults to `description`) |
-| `twitterImage` | `string` | Twitter image URL |
-| `twitterImageAlt` | `string` | Twitter image alt text |
-| `jsonLd` | `object \| object[]` | JSON-LD structured data |
-| `customMeta` | `CustomMeta[]` | Custom meta tags |
-| `openGraph` | `OpenGraphMeta` | Additional Open Graph properties |
-| `twitter` | `TwitterCardMeta` | Additional Twitter Card properties |
+| Prop                 | Type                                                      | Description                                        |
+| -------------------- | --------------------------------------------------------- | -------------------------------------------------- |
+| `title`              | `string`                                                  | Page title                                         |
+| `description`        | `string`                                                  | Meta description                                   |
+| `keywords`           | `string \| string[]`                                      | Meta keywords (comma-separated string or array)    |
+| `canonical`          | `string`                                                  | Canonical URL                                      |
+| `ogImage`            | `string`                                                  | Open Graph image URL                               |
+| `ogType`             | `string`                                                  | Open Graph type (e.g., "article", "website")       |
+| `ogUrl`              | `string`                                                  | Open Graph URL                                     |
+| `ogTitle`            | `string`                                                  | Open Graph title (defaults to `title`)             |
+| `ogDescription`      | `string`                                                  | Open Graph description (defaults to `description`) |
+| `ogSiteName`         | `string`                                                  | Open Graph site name                               |
+| `ogLocale`           | `string`                                                  | Open Graph locale                                  |
+| `twitterCard`        | `'summary' \| 'summary_large_image' \| 'app' \| 'player'` | Twitter Card type                                  |
+| `twitterSite`        | `string`                                                  | Twitter site handle                                |
+| `twitterCreator`     | `string`                                                  | Twitter creator handle                             |
+| `twitterTitle`       | `string`                                                  | Twitter title (defaults to `title`)                |
+| `twitterDescription` | `string`                                                  | Twitter description (defaults to `description`)    |
+| `twitterImage`       | `string`                                                  | Twitter image URL                                  |
+| `twitterImageAlt`    | `string`                                                  | Twitter image alt text                             |
+| `jsonLd`             | `object \| object[]`                                      | JSON-LD structured data                            |
+| `customMeta`         | `CustomMeta[]`                                            | Custom meta tags                                   |
+| `openGraph`          | `OpenGraphMeta`                                           | Additional Open Graph properties                   |
+| `twitter`            | `TwitterCardMeta`                                         | Additional Twitter Card properties                 |
 
 ### `useSeo()` Hook
 
@@ -253,7 +251,13 @@ Returns an object with:
 Full TypeScript support is included. Import types as needed:
 
 ```tsx
-import type { SeoProps, OpenGraphMeta, TwitterCardMeta, CustomMeta, JsonLd } from 'react-client-seo';
+import type {
+  SeoProps,
+  OpenGraphMeta,
+  TwitterCardMeta,
+  CustomMeta,
+  JsonLd,
+} from "react-client-seo";
 ```
 
 ## How It Works
@@ -264,20 +268,6 @@ import type { SeoProps, OpenGraphMeta, TwitterCardMeta, CustomMeta, JsonLd } fro
 - Cleans up JSON-LD scripts on unmount (component API)
 - Works entirely client-side - no SSR required
 
-## Publishing to NPM
-
-1. Update version in `package.json`
-2. Build the package:
-   ```bash
-   npm run build
-   ```
-3. Publish:
-   ```bash
-   npm publish
-   ```
-
-The `prepare` script automatically runs before publishing, ensuring the package is built.
-
 ## License
 
 MIT
@@ -285,4 +275,3 @@ MIT
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
