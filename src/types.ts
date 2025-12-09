@@ -55,6 +55,43 @@ export interface SeoProps {
   description?: string;
   /** Meta keywords (comma-separated string or array) */
   keywords?: string | string[];
+  /** Meta author */
+  author?: string;
+  /** Meta robots (e.g., "index, follow", "noindex, nofollow") */
+  robots?: string;
+  /** Meta language/Content-Language */
+  language?: string;
+  /** Meta viewport (e.g., "width=device-width, initial-scale=1") */
+  viewport?: string;
+  /** Meta generator */
+  generator?: string;
+  /** Meta revisit-after (e.g., "7 days") */
+  revisitAfter?: string;
+  /** Meta rating */
+  rating?: string;
+  /** Meta distribution */
+  distribution?: string;
+  /** Meta copyright */
+  copyright?: string;
+  /** Meta theme-color */
+  themeColor?: string;
+  /** Meta referrer */
+  referrer?: string;
+  /** Meta format-detection (mobile) */
+  formatDetection?: string;
+  /** Meta mobile-web-app-capable */
+  mobileWebAppCapable?: string;
+  /** Meta apple-mobile-web-app-capable */
+  appleMobileWebAppCapable?: string;
+  /** Geo tags */
+  /** Geo region (e.g., "US-NY") */
+  geoRegion?: string;
+  /** Geo placename */
+  geoPlacename?: string;
+  /** Geo position (e.g., "latitude;longitude") */
+  geoPosition?: string;
+  /** ICBM coordinates (e.g., "latitude, longitude") */
+  icbm?: string;
   /** Canonical URL */
   canonical?: string;
   /** Open Graph metadata */

@@ -35,6 +35,24 @@ export function Seo({
   title,
   description,
   keywords,
+  author,
+  robots,
+  language,
+  viewport,
+  generator,
+  revisitAfter,
+  rating,
+  distribution,
+  copyright,
+  themeColor,
+  referrer,
+  formatDetection,
+  mobileWebAppCapable,
+  appleMobileWebAppCapable,
+  geoRegion,
+  geoPlacename,
+  geoPosition,
+  icbm,
   canonical,
   ogImage,
   ogType,
@@ -70,6 +88,91 @@ export function Seo({
     const keywordsStr = formatKeywords(keywords);
     if (keywordsStr) {
       setMetaTag('keywords', keywordsStr);
+    }
+
+    // Set author
+    if (author) {
+      setMetaTag('author', author);
+    }
+
+    // Set robots
+    if (robots) {
+      setMetaTag('robots', robots);
+    }
+
+    // Set language
+    if (language) {
+      setMetaTag('language', language);
+      setMetaTag('content-language', language);
+    }
+
+    // Set viewport
+    if (viewport) {
+      setMetaTag('viewport', viewport);
+    }
+
+    // Set generator
+    if (generator) {
+      setMetaTag('generator', generator);
+    }
+
+    // Set revisit-after
+    if (revisitAfter) {
+      setMetaTag('revisit-after', revisitAfter);
+    }
+
+    // Set rating
+    if (rating) {
+      setMetaTag('rating', rating);
+    }
+
+    // Set distribution
+    if (distribution) {
+      setMetaTag('distribution', distribution);
+    }
+
+    // Set copyright
+    if (copyright) {
+      setMetaTag('copyright', copyright);
+    }
+
+    // Set theme-color
+    if (themeColor) {
+      setMetaTag('theme-color', themeColor);
+    }
+
+    // Set referrer
+    if (referrer) {
+      setMetaTag('referrer', referrer);
+    }
+
+    // Set format-detection
+    if (formatDetection) {
+      setMetaTag('format-detection', formatDetection);
+    }
+
+    // Set mobile-web-app-capable
+    if (mobileWebAppCapable) {
+      setMetaTag('mobile-web-app-capable', mobileWebAppCapable);
+    }
+
+    // Set apple-mobile-web-app-capable
+    if (appleMobileWebAppCapable) {
+      setMetaTag('apple-mobile-web-app-capable', appleMobileWebAppCapable);
+    }
+
+    // Set geo tags
+    if (geoRegion) {
+      setMetaTag('geo.region', geoRegion);
+    }
+    if (geoPlacename) {
+      setMetaTag('geo.placename', geoPlacename);
+    }
+    if (geoPosition) {
+      setMetaTag('geo.position', geoPosition);
+    }
+    if (icbm) {
+      setMetaTag('ICBM', icbm);
     }
 
     // Set canonical URL
@@ -160,6 +263,24 @@ export function Seo({
     title,
     description,
     keywords,
+    author,
+    robots,
+    language,
+    viewport,
+    generator,
+    revisitAfter,
+    rating,
+    distribution,
+    copyright,
+    themeColor,
+    referrer,
+    formatDetection,
+    mobileWebAppCapable,
+    appleMobileWebAppCapable,
+    geoRegion,
+    geoPlacename,
+    geoPosition,
+    icbm,
     canonical,
     ogImage,
     ogType,

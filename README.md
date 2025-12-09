@@ -45,6 +45,8 @@ function App() {
         title="My Page Title"
         description="This is a great page about React SEO"
         keywords={["react", "seo", "meta tags"]}
+        author="John Doe"
+        robots="index, follow"
         canonical="https://example.com/page"
       />
       <div>Your content here</div>
@@ -83,6 +85,23 @@ function MyComponent() {
   title="Home Page"
   description="Welcome to our website"
   keywords="home, welcome, website"
+  author="John Doe"
+  robots="index, follow"
+  language="en"
+  viewport="width=device-width, initial-scale=1"
+/>
+```
+
+### Geo Tags
+
+```tsx
+<Seo
+  title="Location Page"
+  description="Our location"
+  geoRegion="US-NY"
+  geoPlacename="New York"
+  geoPosition="40.7128;-74.0060"
+  icbm="40.7128, -74.0060"
 />
 ```
 
@@ -214,30 +233,48 @@ function ProductPage({ product }) {
 
 ### `<Seo />` Component Props
 
-| Prop                 | Type                                                      | Description                                        |
-| -------------------- | --------------------------------------------------------- | -------------------------------------------------- |
-| `title`              | `string`                                                  | Page title                                         |
-| `description`        | `string`                                                  | Meta description                                   |
-| `keywords`           | `string \| string[]`                                      | Meta keywords (comma-separated string or array)    |
-| `canonical`          | `string`                                                  | Canonical URL                                      |
-| `ogImage`            | `string`                                                  | Open Graph image URL                               |
-| `ogType`             | `string`                                                  | Open Graph type (e.g., "article", "website")       |
-| `ogUrl`              | `string`                                                  | Open Graph URL                                     |
-| `ogTitle`            | `string`                                                  | Open Graph title (defaults to `title`)             |
-| `ogDescription`      | `string`                                                  | Open Graph description (defaults to `description`) |
-| `ogSiteName`         | `string`                                                  | Open Graph site name                               |
-| `ogLocale`           | `string`                                                  | Open Graph locale                                  |
-| `twitterCard`        | `'summary' \| 'summary_large_image' \| 'app' \| 'player'` | Twitter Card type                                  |
-| `twitterSite`        | `string`                                                  | Twitter site handle                                |
-| `twitterCreator`     | `string`                                                  | Twitter creator handle                             |
-| `twitterTitle`       | `string`                                                  | Twitter title (defaults to `title`)                |
-| `twitterDescription` | `string`                                                  | Twitter description (defaults to `description`)    |
-| `twitterImage`       | `string`                                                  | Twitter image URL                                  |
-| `twitterImageAlt`    | `string`                                                  | Twitter image alt text                             |
-| `jsonLd`             | `object \| object[]`                                      | JSON-LD structured data                            |
-| `customMeta`         | `CustomMeta[]`                                            | Custom meta tags                                   |
-| `openGraph`          | `OpenGraphMeta`                                           | Additional Open Graph properties                   |
-| `twitter`            | `TwitterCardMeta`                                         | Additional Twitter Card properties                 |
+| Prop                       | Type                                                      | Description                                                 |
+| -------------------------- | --------------------------------------------------------- | ----------------------------------------------------------- |
+| `title`                    | `string`                                                  | Page title                                                  |
+| `description`              | `string`                                                  | Meta description                                            |
+| `keywords`                 | `string \| string[]`                                      | Meta keywords (comma-separated string or array)             |
+| `author`                   | `string`                                                  | Meta author                                                 |
+| `robots`                   | `string`                                                  | Meta robots (e.g., "index, follow", "noindex, nofollow")    |
+| `language`                 | `string`                                                  | Meta language/Content-Language                              |
+| `viewport`                 | `string`                                                  | Meta viewport (e.g., "width=device-width, initial-scale=1") |
+| `generator`                | `string`                                                  | Meta generator                                              |
+| `revisitAfter`             | `string`                                                  | Meta revisit-after (e.g., "7 days")                         |
+| `rating`                   | `string`                                                  | Meta rating                                                 |
+| `distribution`             | `string`                                                  | Meta distribution                                           |
+| `copyright`                | `string`                                                  | Meta copyright                                              |
+| `themeColor`               | `string`                                                  | Meta theme-color                                            |
+| `referrer`                 | `string`                                                  | Meta referrer                                               |
+| `formatDetection`          | `string`                                                  | Meta format-detection (mobile)                              |
+| `mobileWebAppCapable`      | `string`                                                  | Meta mobile-web-app-capable                                 |
+| `appleMobileWebAppCapable` | `string`                                                  | Meta apple-mobile-web-app-capable                           |
+| `geoRegion`                | `string`                                                  | Geo region (e.g., "US-NY")                                  |
+| `geoPlacename`             | `string`                                                  | Geo placename                                               |
+| `geoPosition`              | `string`                                                  | Geo position (e.g., "latitude;longitude")                   |
+| `icbm`                     | `string`                                                  | ICBM coordinates (e.g., "latitude, longitude")              |
+| `canonical`                | `string`                                                  | Canonical URL                                               |
+| `ogImage`                  | `string`                                                  | Open Graph image URL                                        |
+| `ogType`                   | `string`                                                  | Open Graph type (e.g., "article", "website")                |
+| `ogUrl`                    | `string`                                                  | Open Graph URL                                              |
+| `ogTitle`                  | `string`                                                  | Open Graph title (defaults to `title`)                      |
+| `ogDescription`            | `string`                                                  | Open Graph description (defaults to `description`)          |
+| `ogSiteName`               | `string`                                                  | Open Graph site name                                        |
+| `ogLocale`                 | `string`                                                  | Open Graph locale                                           |
+| `twitterCard`              | `'summary' \| 'summary_large_image' \| 'app' \| 'player'` | Twitter Card type                                           |
+| `twitterSite`              | `string`                                                  | Twitter site handle                                         |
+| `twitterCreator`           | `string`                                                  | Twitter creator handle                                      |
+| `twitterTitle`             | `string`                                                  | Twitter title (defaults to `title`)                         |
+| `twitterDescription`       | `string`                                                  | Twitter description (defaults to `description`)             |
+| `twitterImage`             | `string`                                                  | Twitter image URL                                           |
+| `twitterImageAlt`          | `string`                                                  | Twitter image alt text                                      |
+| `jsonLd`                   | `object \| object[]`                                      | JSON-LD structured data                                     |
+| `customMeta`               | `CustomMeta[]`                                            | Custom meta tags                                            |
+| `openGraph`                | `OpenGraphMeta`                                           | Additional Open Graph properties                            |
+| `twitter`                  | `TwitterCardMeta`                                         | Additional Twitter Card properties                          |
 
 ### `useSeo()` Hook
 
@@ -267,6 +304,10 @@ import type {
 - Avoids duplicate tags
 - Cleans up JSON-LD scripts on unmount (component API)
 - Works entirely client-side - no SSR required
+
+## Author
+
+**Rainard Joseph**
 
 ## License
 
